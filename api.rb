@@ -17,7 +17,7 @@ get '/api/post' do
 end
 
 get '/api/posts' do
-  posts = Post.all
+  posts = Post.order("RANDOM()").limit(10)
   ary = []
   posts.each do |post|
     ary.push({

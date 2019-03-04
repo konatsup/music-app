@@ -21,7 +21,7 @@ post '/posts/new' do
   post = Post.create(
     title: params[:title],
     description: params[:description],
-    image_url: "",
+    image_url: "http://res.cloudinary.com/konatsup/image/upload/v1551698056/elwqqjviuruatqb5rqi7.jpg",
     music_url: ""
   )
   if params[:image_file]

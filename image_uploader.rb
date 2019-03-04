@@ -9,6 +9,17 @@ def image_upload(img)
   post.update_attribute(:image_url, upload['url'])
 end
 
+def music_upload(img)
+  logger.info "upload now"
+  tempfile = img[:tempfile]
+  # puts tempfile.path
+  upload = Cloudinary::Uploader.upload(tempfile.path, options={ resource_type: "video" })
+
+  post = Post.last
+
+  post.update_attribute(:music_url, upload['url'])
+end
+
 def image_upload_local(img)
   if img
     contents = Contribution.last

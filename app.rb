@@ -22,10 +22,13 @@ post '/posts/new' do
     title: params[:title],
     description: params[:description],
     image_url: "",
-    music_url: "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/4c/9b/f4/4c9bf4df-3b01-ffbd-6e9e-cf558ac7a4d9/mzaf_4294571228281925337.plus.aac.p.m4a"
+    music_url: ""
   )
   if params[:image_file]
     image_upload(params[:image_file])
+  end
+  if params[:music_file]
+    music_upload(params[:music_file])
   end
 
   redirect '/'

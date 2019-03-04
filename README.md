@@ -78,6 +78,15 @@ has_many :posts
 
 belongs_to :user
 
+### Tag
+
+| カラム名 | 型      | 説明   |
+| -------- | ------- | ------ |
+| id       | integer | ID     |
+| name     | string  | タグ名 |
+
+belongs_to :user
+
 ## URI 設計
 
 | action | path              | 説明                                    |
